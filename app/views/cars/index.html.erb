@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cars</h1>
+  <div class="row"
+
+
+  <% @cars.each do |car| %>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= link_to car.model, car %>
+    </div>
+    <div class="panel-body">
+      Made by <%= car.make %><br>
+      Year: <%= car.year %>
+      Posted on: <%= car.created_at.strftime('%D %I:%M:%p') %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to "Edit", edit_car_path(car), class: "btn btn-warning" %>
+      <%= link_to "Delete", car, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
+
+
+<br>
+
+<%= link_to 'New Car', new_car_path %>

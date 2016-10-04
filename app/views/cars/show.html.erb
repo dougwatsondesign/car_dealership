@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel-primary">
+	<div class="panel-heading">
+	<%= @car.model %>
+	</div>
+
+	<div class="container">
+		
+	<div class="panel-body">
+		<p><%= @car.make %></p>
+		<p><%= @car.year %></p>
+	</div>
+	</div>
+
+	<div class="panel-footer">
+		<%= link_to 'Edit', edit_car_path(@car), class: "btn btn-warning" %>
+		<%= link_to 'Destroy', @car, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn-btn-danger" %>
+	</div>
+</div>
+
+
+<%= link_to 'Back', cars_path %>
